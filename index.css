@@ -1,0 +1,90 @@
+/* Fill CSS here */
+#navbar{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: cadetblue;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+h1{
+    color: royalblue;
+    text-decoration: underline;
+    text-align: center;
+    margin-top: 140px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+
+#auth{
+    gap: 20px;
+}
+
+div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+form{
+    width: 20%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    flex-direction: column;
+    line-height: 10px;
+    padding: 20px;
+    border-radius: 5px;
+}
+label{
+    font-family: sans-serif;
+    font-weight: bold;
+}
+input{
+    height: 35px;
+}
+
+select{
+    height: 35px;
+}
+.btn{
+    background-color: cornflowerblue;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+}
+table{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 21%;
+}
+th{
+    background-color: cornflowerblue;
+    color: white;
+    font-family: sans-serif;
+    padding: 5px;
+    border-radius: 5px;
+
+}
+td{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+button{
+    cursor: pointer;
+    background-color: cornflowerblue;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    border-radius: 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+}

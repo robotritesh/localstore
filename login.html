@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form method="get" action="./home.html">
+      <input type="email" placeholder="Enter your email" />
+      <input type="password" placeholder="Enter your password" />
+      <input type="submit" />
+    </form>
+
+    <script>
+      let form = document.querySelector("form");
+      let data;
+
+      function loadData() {
+        let savedData = JSON.parse(localStorage.getItem("data"));
+        // console.log(savedData)
+        if (savedData) {
+          data = savedData;
+        }
+        console.log(data);
+      }
+
+      function handleFormSubmite(event) {
+        event.preventDefault();
+        let targetElement = event.target;
+        let email = targetElement[0].value;
+        console.log(email);
+        let password = targetElement[1].value;
+        console.log(password);
+        // console.log(data);
+        let narr = data.filter(function (ele, i) {
+          return ele.email === email && ele.password === password;
+        });
+        console.log(narr);
+        if (narr.length > 0) {
+          alert("Logged in successfully");
+          window.location.href = "index.html";
+        } else {
+          alert("Wrong password");
+        }
+      }
+      form.addEventListener("submit", function (event) {
+        handleFormSubmite(event);
+      });
+      loadData();
+    </script>
+  </body>
+</html>

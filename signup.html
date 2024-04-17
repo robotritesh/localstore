@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form>
+        <input type="text" placeholder="Enter your username">
+        <input type="email" placeholder="Enter your email" >
+        <input placeholder="Enter your password">
+        <input type="password" placeholder="confirm password">
+        <input type="submit">
+    </form>
+
+    <script>
+        let form=document.querySelector("form")
+
+        let data=[]
+        // function saveData(key,arr){
+        //     localStorage.setItem("key",JSON.stringify(arr))
+        // }
+
+        function saveData(){
+            localStorage.setItem("data",JSON.stringify(data))
+        }
+        function loadData(){
+            let savedData=JSON.parse(localStorage.getItem("data"))
+            if(saveData){
+                data=savedData
+            }
+        }
+        function handleFormSubmit(e){
+            e.preventDefault()
+
+            let targetElemt=e.target
+            let username=targetElemt[0].value
+            let email=targetElemt[1].value
+            let password=targetElemt[2].value
+            let confirm=targetElemt[3].value
+
+            if(password == confirm){
+                let narr=data.filter(function(ele,i){
+                    return ele.user===username
+                })
+                if(narr.length>0){
+                    alert("username is already taken")
+                }else{
+
+                
+                let obj={
+                    user:username,
+                    email:email,
+                    password:password
+                }
+                data.push(obj)
+                // saveData("data",data)
+                saveData();
+                console.log(data);
+                alert("Registration successfull")
+                window.location.href="login.html" 
+            } 
+            }else{
+                alert("passwords not match")
+            }
+            
+        }
+        form.addEventListener("submit",function(event){
+            handleFormSubmit(event)
+        })
+        loadData
+    </script>
+</body>
+</html>
